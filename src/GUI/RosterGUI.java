@@ -4,6 +4,7 @@ import External.GUI_Helpers;
 import External.ImageEditing;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import mainFunctionality.FileIO;
 
@@ -63,11 +64,11 @@ public class RosterGUI {
 	{
 		this.factionDirectory = curFactionDirectory;
 		this.factionName = factionNameTrimmed;
-		
 	}
 	
 	//TODO -> EXAMPLE USAGE OF createGUIPanel():
-	Stage s = gui.createGUIPanel("Example Title", 500, 500, null, 5, true, new VBox(), new VBox(), new HBox(), new VBox());
+	Stage s = gui.createGUIPanel("Example Title", 500, 500, null, 5, true, new Text("example A"), new Text("example B"),
+			new VBox(), new VBox(), new HBox(), new VBox());
 	
 	//TODO -> Don't forget to use "spacing" on all these methods (Do math on the spacing, rather than hardcoded numbers, if needing
 	//			separate spacing amounts), to allow for scalability and maintainability!
@@ -97,32 +98,45 @@ public class RosterGUI {
 		//TODO -> Display the list of buttons on a new stage; also put a "Return" button at the bottom, as well,
 		//			which will exit only the current stage (The one you just created!)
 		//TODO -> Also on this same stage, put also the following button: "New Unit", which, if clicked, will call
-		//			createUnit(unitType, <Button Text / Unit Name>), followed by
-		//			updateUnit(unitType, <Button Text / Unit Name>)
+		//			createUnit(unitType, <Button Text / Unit Name>)
 		//TODO Hint: Use gui for the stage creation, and resizer to resize the GUI afterwards; you can see FactionGUI.java for an example
 	}
 	
 	private void getUnit(String unitType, String unitName)
 	{
+		//TODO -> DO NOT CODE YET; FILE STRUCTURE BEING WRITTEN!!!
+		
 		//TODO -> Get list of all files in (factionDirectory + unitType + "/" + unitName + "/"); use io.getText() on all these files,
-		//			and then convert these inputs into getUnitGUI(), as variadic arguments for "inputsForFields" variable
+		//			and then convert these inputs into updateUnit(), as variadic arguments for "inputsForFields" variable
+		//TODO -> Before calling updateUnit(), delimit the data by the @ symbol
 		//TODO Note: If you work on this one, you will need to know the file structure from Evan
 	}
 	
 	private void createUnit(String unitType, String unitName)
 	{
+		//TODO -> DO NOT CODE YET; FILE STRUCTURE BEING WRITTEN!!!
+		
 		//TODO -> Create a folder for the unit, and then call io.setText() for every file for the unit (Put just blank text in each file)
+		//TODO -> Call updateUnit(unitType, <Button Text / Unit Name>), and if false, delete the files that were created,
+		//				via io.deleteFileOrFolder()
 		//TODO Note: If you work on this one, you will need to know the file structure from Evan
 	}
 	
-	private void updateUnit(String unitType, String unitName, String...inputsForFields)
+	private boolean updateUnit(String unitType, String unitName, String...inputsForFields)
 	{
+		//TODO -> DO NOT CODE YET; FILE STRUCTURE BEING WRITTEN!!!
+		//TODO -> Evan will do this one!!!
+		
 		//TODO -> Create a GUI that maps to what the text files look like, and if and only if inputsForFields is not blank,
 		//			copy the fields from those variadic arguments into the actual fields themselves
-		//TODO -> Also put two buttons, one being "Cancel", which just returns, and the other being "Save", which calls io.setText(),
+		//TODO -> Also put two buttons, one being "Cancel", which just returns false, and the other being "Save", which calls io.setText(),
 		//			converting the fields back to text form to be inserted into the files
+		//TODO -> Put into the fields (In order) what's delimited from each inputsForFields[] via "@"; use empty fields if no
+		//				inputsForFields data
+		//TODO -> Return true if successfully updates
 		//TODO Note: If you work on this one, you will need to know the file structure from Evan
 		//TODO Hint: Use gui for the stage creation, and resizer to resize the GUI afterwards; you can see FactionGUI.java for an example
+		return true;
 	}
 	
 }

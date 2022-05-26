@@ -173,6 +173,7 @@ public class FactionGUI {
 			if (prompt2 == 0)
 				io.deleteFileOrFolder(factionName);
 		}
+		//TODO -> Test if Deletion Removes from the GUI, As Well!!!
 	}
 
 }
